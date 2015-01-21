@@ -30,11 +30,12 @@ makeCacheMatrix <- function(x = matrix()) {
 
 
 ## cacheSolve returns a matrix that is the inverse of 'x'.
-## 'A' is an argument that allows you to pass the desired matrix to cacheSolve
-## to ensure that the matrix hasn't changed from makeCacheMatrix. 
+## 'A' is an argument where you pass the desired matrix to cacheSolve
+## to ensure that the matrix hasn't changed from makeCacheMatrix. The default is set to
+## the stored matrix.
 
 
-cacheSolve <- function(x, A = matrix(), ...) {
+cacheSolve <- function(x, A = x$get(), ...) {
         inverse <- x$getInverse()
         matrix <- x$get()
         
